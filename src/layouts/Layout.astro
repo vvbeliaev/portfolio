@@ -1,0 +1,64 @@
+---
+import "../styles/global.css";
+import ThemeLoad from "../components/ThemeLoad.svelte";
+import Sidebar from "../components/Sidebar.svelte";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO -->
+    <title>Vladimir Beliaev | Full Stack Engineer</title>
+    <meta
+      name="description"
+      content="Portfolio of Vladimir Beliaev (aka plw). Full Stack Engineer specializing in ML/DS background, WebDev, Backend, and LLM integrations."
+    />
+    <meta name="author" content="Vladimir Beliaev" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://vladimirbeliaev.com/" />
+    <meta
+      property="og:title"
+      content="Vladimir Beliaev | Full Stack Engineer"
+    />
+    <meta
+      property="og:description"
+      content="Full Stack Engineer with ML/DS background. Building high-quality prototypes and scalable systems."
+    />
+    <meta
+      property="og:image"
+      content="https://placehold.co/1200x630/2563eb/ffffff?text=Vladimir+Beliaev"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://vladimirbeliaev.com/" />
+    <meta
+      property="twitter:title"
+      content="Vladimir Beliaev | Full Stack Engineer"
+    />
+    <meta
+      property="twitter:description"
+      content="Full Stack Engineer with ML/DS background. Building high-quality prototypes and scalable systems."
+    />
+    <meta
+      property="twitter:image"
+      content="https://placehold.co/1200x630/2563eb/ffffff?text=Vladimir+Beliaev"
+    />
+
+    <ThemeLoad client:load />
+  </head>
+  <body
+    class="bg-base-200 min-h-screen flex flex-col md:flex-row overflow-hidden"
+  >
+    <Sidebar client:load />
+    <main class="flex-1 h-screen relative">
+      <slot />
+    </main>
+  </body>
+</html>

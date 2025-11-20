@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import ThemeLoad from "../components/ThemeLoad.svelte";
 import Sidebar from "../components/Sidebar.svelte";
+import Background from "../components/Background.svelte";
 ---
 
 <html lang="en">
@@ -53,10 +54,9 @@ import Sidebar from "../components/Sidebar.svelte";
 
     <ThemeLoad client:load />
   </head>
-  <body
-    class="bg-base-200 min-h-screen flex flex-col md:flex-row overflow-hidden"
-  >
+  <body class="min-h-screen flex flex-col md:flex-row overflow-hidden">
     <Sidebar client:load />
+    <Background />
     <main class="flex-1 h-screen relative">
       <slot />
     </main>

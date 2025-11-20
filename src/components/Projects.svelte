@@ -1,32 +1,37 @@
 <script>
+  import Quizbee from "../assets/quizbee.png";
+  import Growplex from "../assets/growplex.png";
+  import LLMAgent from "../assets/llmagent.png";
+  import YS from "../assets/ys.png";
+
   const projects = [
     {
       title: "YouStory.nl",
       url: "https://ys.cogitosoftware.nl/",
       desc: "An interactive platform where users co-create stories with AI. Features real-time text generation, dynamic plot branching, and character consistency checks using custom LLM pipelines.",
       stack: ["SvelteKit", "Node.js", "LLM", "Coolify"],
-      image: "https://placehold.co/600x300/2563eb/ffffff?text=AI+Storytelling",
+      image: YS.src,
     },
     {
       title: "Quizbee.academy",
       url: "https://quizbee.academy",
       desc: "AI-powered quiz generator for educators. Automatically converts lecture notes and PDFs into interactive quizzes, tracking student progress and providing analytics.",
       stack: ["Sveltekit", "FastAPI", "Redis", "PydanticAI", "SOLID"],
-      image: "https://placehold.co/600x300/f59e0b/ffffff?text=Quizbee",
+      image: Quizbee.src,
     },
     {
       title: "Growplex.dev",
       url: "https://growplex.dev",
       desc: "Seamless AI integration for CRM systems. Automates customer data entry, sentiment analysis, and follow-up scheduling, reducing manual workload by 40%.",
       stack: ["Astro", "LangChain", "Postgres"],
-      image: "https://placehold.co/600x300/10b981/ffffff?text=Growplex",
+      image: Growplex.src,
     },
     {
       title: "LLMAgent.ru",
       url: "https://llmagent.ru",
       desc: "Enterprise-grade AI knowledge base. Ingests corporate documentation to answer employee queries with high accuracy, featuring citation tracking and role-based access control.",
       stack: ["FastAPI", "Elastic", "Qdrant", "Postgres"],
-      image: "https://placehold.co/600x300/8b5cf6/ffffff?text=LLM+Agent",
+      image: LLMAgent.src,
     },
   ];
 </script>

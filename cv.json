@@ -2,25 +2,25 @@
   "basics": {
     "name": "Vladimir Belyaev",
     "headline": "Full-stack Engineer (Web & AI)",
-    "email": "kwazzartcreature@gmail.com",
+    "email": "vvladimirbeliaev@gmail.com",
     "phone": "tg: @kwazzart",
     "location": "Moscow",
     "url": {
       "label": "Portfolio",
-      "href": "https://plw.cogitosoftware.nl"
+      "href": "https://vvbeliaev.cogisoft.dev"
     },
     "customFields": [
       {
         "id": "sheklse838ylce3yctzbh97r",
         "icon": "github",
         "name": "GitHub",
-        "value": "https://github.com/kwazzartcreature"
+        "value": "https://github.com/paper-light"
       },
       {
         "id": "bv21rg0tdhz90ywk2lla6igh",
         "icon": "globe",
         "name": "Website",
-        "value": "https://kwazzart.tech/"
+        "value": "https://vvbeliaev.cogisoft.dev/"
       }
     ],
     "picture": {

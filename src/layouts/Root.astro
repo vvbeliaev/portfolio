@@ -62,15 +62,20 @@ import Background from "../components/Background.astro";
       content="https://placehold.co/1200x630/2563eb/ffffff?text=Vladimir+Beliaev"
     />
 
+    <meta name="theme-color" content="#ffffff" />
     <script is:inline>
       const theme = localStorage.getItem("theme") || "LIGHT";
       document.documentElement.setAttribute("data-theme", theme);
+      const themeColor = theme === "DARK" ? "#0a0a0a" : "#fcfcfc";
+      document
+        .querySelector('meta[name="theme-color"]')
+        .setAttribute("content", themeColor);
     </script>
   </head>
-  <body class="min-h-screen flex flex-col md:flex-row overflow-hidden">
+  <body class="min-h-dvh flex flex-col md:flex-row overflow-hidden bg-base-100">
     <Sidebar client:load />
     <Background />
-    <main class="flex-1 h-screen relative">
+    <main class="flex-1 h-dvh relative">
       <slot />
     </main>
   </body>

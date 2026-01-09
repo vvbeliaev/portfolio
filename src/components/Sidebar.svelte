@@ -21,7 +21,7 @@
 </script>
 
 <aside
-  class="fixed bottom-0 left-0 w-full h-16 md:w-20 md:h-screen bg-base-100 border-t md:border-t-0 md:border-r border-base-content/10 z-50 flex md:flex-col justify-between items-center px-6 md:px-0 md:py-8"
+  class="fixed bottom-0 left-0 w-full h-16 md:w-20 md:h-screen bg-base-100/80 backdrop-blur-md border-t md:border-t-0 md:border-r border-base-content/10 z-50 flex md:flex-col justify-between items-center px-6 md:px-0 md:py-8"
 >
   <div class="hidden md:flex flex-col items-center gap-4">
     <img
@@ -60,33 +60,36 @@
     </div>
 
     <!-- Mobile Icons -->
-    <div class="flex md:hidden gap-12 w-full justify-center">
+    <div class="flex md:hidden gap-8 w-full justify-center">
       <button
         onclick={() => scrollToSection("profile")}
-        class="btn btn-ghost btn-circle {uiState.activeSection === 'profile'
+        class="btn btn-ghost btn-circle btn-sm {uiState.activeSection ===
+        'profile'
           ? 'text-primary bg-primary/10'
           : 'text-base-content/60'}"
         aria-label="Profile"
       >
-        <User class="size-6" />
+        <User class="size-5" />
       </button>
       <button
         onclick={() => scrollToSection("stack")}
-        class="btn btn-ghost btn-circle {uiState.activeSection === 'stack'
+        class="btn btn-ghost btn-circle btn-sm {uiState.activeSection ===
+        'stack'
           ? 'text-primary bg-primary/10'
           : 'text-base-content/60'}"
         aria-label="Stack"
       >
-        <Layers class="size-6" />
+        <Layers class="size-5" />
       </button>
       <button
         onclick={() => scrollToSection("projects")}
-        class="btn btn-ghost btn-circle {uiState.activeSection === 'projects'
+        class="btn btn-ghost btn-circle btn-sm {uiState.activeSection ===
+        'projects'
           ? 'text-primary bg-primary/10'
           : 'text-base-content/60'}"
         aria-label="Projects"
       >
-        <Briefcase class="size-6" />
+        <Briefcase class="size-5" />
       </button>
     </div>
 
@@ -108,7 +111,7 @@
         <FileUser class="size-5 md:size-6" />
       </a>
       <a
-        href="mailto:kwazzartcreature@gmail.com"
+        href="mailto:vvladimirbeliaev@gmail.com"
         class="btn btn-ghost btn-circle btn-sm md:btn-md"
         aria-label="Email"
       >

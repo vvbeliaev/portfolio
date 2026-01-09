@@ -1,40 +1,11 @@
 ---
 import { Image } from "astro:assets";
-import Quizbee from "../assets/quizbee.png";
-import Growplex from "../assets/growplex.png";
-import LLMAgent from "../assets/llmagent.png";
-import HS from "../assets/hackseeker.png";
+import { getCollection } from "astro:content";
 
-const projects = [
-  {
-    title: "HackSeeker",
-    url: "https://hackseeker.quizbee.academy/",
-    desc: "A tool that helps you find and validate your product ideas.",
-    stack: ["SvelteKit", "Node.js", "LLM", "Coolify"],
-    image: HS,
-  },
-  {
-    title: "Quizbee.academy",
-    url: "https://quizbee.academy",
-    desc: "AI-powered quiz generator for educators. Automatically converts lecture notes and PDFs into interactive quizzes, tracking student progress and providing analytics.",
-    stack: ["Sveltekit", "FastAPI", "Redis", "PydanticAI", "SOLID"],
-    image: Quizbee,
-  },
-  {
-    title: "Growplex.dev",
-    url: "https://growplex.dev",
-    desc: "Seamless AI integration for CRM systems. Automates customer data entry, sentiment analysis, and follow-up scheduling, reducing manual workload by 40%.",
-    stack: ["Astro", "LangChain", "Postgres"],
-    image: Growplex,
-  },
-  {
-    title: "LLMAgent.ru",
-    url: "https://llmagent.ru",
-    desc: "Enterprise-grade AI knowledge base. Ingests corporate documentation to answer employee queries with high accuracy, featuring citation tracking and role-based access control.",
-    stack: ["FastAPI", "Elastic", "Qdrant", "Postgres"],
-    image: LLMAgent,
-  },
-];
+const projects = await getCollection("labs");
+const sortedProjects = projects
+  .sort((a: any, b: any) => a.data.priority - b.data.priority)
+  .slice(0, 4);
 ---
 
 <div class="h-full flex flex-col justify-center max-w-6xl mx-auto px-4 py-12">
@@ -44,17 +15,17 @@ const projects = [
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
     {
-      projects.map((project) => (
+      sortedProjects.map((project: any) => (
         <a
-          href={project.url}
+          href={project.data.link}
           target="_blank"
           rel="noopener noreferrer"
           class="card-terminal group hover:border-primary/50 transition-all duration-300 overflow-hidden flex flex-col h-full"
         >
           <div class="h-48 overflow-hidden relative border-b border-base-content/10">
             <Image
-              src={project.image}
-              alt={project.title}
+              src={project.data.image}
+              alt={project.data.title}
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -66,15 +37,15 @@ const projects = [
 
           <div class="p-6 flex flex-col flex-1">
             <h4 class="text-xl font-bold text-base-content group-hover:text-primary transition-colors mb-3">
-              {project.title}
+              {project.data.title}
             </h4>
 
             <p class="text-sm text-base-content/70 mb-6 leading-relaxed line-clamp-3">
-              {project.desc}
+              {project.data.description}
             </p>
 
             <div class="flex flex-wrap gap-2 mt-auto">
-              {project.stack.map((tech) => (
+              {project.data.tags.map((tech: string) => (
                 <span class="text-xs text-base-content/50 bg-base-content/5 px-2 py-1 rounded border border-base-content/5">
                   {tech}
                 </span>

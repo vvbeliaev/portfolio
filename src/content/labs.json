@@ -6,7 +6,7 @@
     "priority": 2,
     "description": "A tool that helps you find and validate your product ideas.",
     "tags": ["SvelteKit", "Node.js", "LLM", "Coolify"],
-    "link": "https://hackseeker.quizbee.academy/",
+    "link": "https://hackseeker.com/",
     "image": "../assets/hackseeker.png",
     "color": "from-primary to-secondary"
   },

@@ -8,6 +8,8 @@
     Layers,
     Briefcase,
     FileUser,
+    Send,
+    Phone,
   } from "lucide-svelte";
   import { uiState } from "../lib/ui.svelte";
 
@@ -101,6 +103,22 @@
         aria-label="GitHub"
       >
         <Github class="size-5 md:size-6" />
+      </a>
+      <a
+        href="https://t.me/vvbeliaevv"
+        target="_blank"
+        class="btn btn-ghost btn-circle btn-sm md:btn-md"
+        aria-label="Telegram"
+      >
+        <Send class="size-5 md:size-6" />
+      </a>
+      <a
+        href="https://wa.me/79787129833"
+        target="_blank"
+        class="btn btn-ghost btn-circle btn-sm md:btn-md"
+        aria-label="WhatsApp"
+      >
+        <Phone class="size-5 md:size-6" />
       </a>
       <a
         href="https://rxresu.me/kwazzartcreature/plw"

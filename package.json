@@ -9,14 +9,14 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/svelte": "^7.2.2",
+    "@astrojs/svelte": "^7.2.5",
     "@fontsource/ibm-plex-mono": "^5.2.7",
     "@fontsource/outfit": "^5.2.8",
     "@fontsource/space-grotesk": "^5.2.10",
     "@fontsource/space-mono": "^5.2.9",
     "@lucide/astro": "^0.562.0",
     "@tailwindcss/vite": "^4.1.17",
-    "astro": "^5.15.9",
+    "astro": "^5.16.8",
     "lucide-svelte": "^0.554.0",
     "sharp": "^0.34.5",
     "svelte": "^5.43.12",
@@ -28,5 +28,6 @@
   },
   "engines": {
     "node": "24"
-  }
+  },
+  "packageManager": "pnpm@10.28.0+sha512.05df71d1421f21399e053fde567cea34d446fa02c76571441bfc1c7956e98e363088982d940465fd34480d4d90a0668bc12362f8aa88000a64e83d0b0e47be48"
 }

@@ -1,6 +1,6 @@
 ---
 // No script needed for static profile card
-import { Github, FileUser, Mail } from "@lucide/astro";
+import { Github, FileUser, Mail, Send, Phone } from "@lucide/astro";
 ---
 
 <div
@@ -42,9 +42,30 @@ import { Github, FileUser, Mail } from "@lucide/astro";
         </a>
       </div>
 
+      <!-- <div
+        class="flex flex-wrap gap-6 mt-2 text-sm md:text-base text-base-content/60"
+      >
+        <a
+          href="https://t.me/vvbeliaevv"
+          target="_blank"
+          class="flex items-center gap-2 hover:text-primary transition-colors"
+        >
+          <Send class="size-4 md:size-5" />
+          <span>@vvbeliaevv</span>
+        </a>
+        <a
+          href="https://wa.me/79787129833"
+          target="_blank"
+          class="flex items-center gap-2 hover:text-primary transition-colors"
+        >
+          <Phone class="size-4 md:size-5" />
+          <span>+7 978 712-98-33</span>
+        </a>
+      </div> -->
+
       <!-- Socials for mobile -->
       <div
-        class="flex md:hidden gap-2 mt-4 pt-4 border-t border-base-content/10"
+        class="flex md:hidden gap-3 mt-4 pt-4 border-t border-base-content/10"
       >
         <a
           href="https://github.com/paper-light"
@@ -53,6 +74,22 @@ import { Github, FileUser, Mail } from "@lucide/astro";
           aria-label="GitHub"
         >
           <Github class="size-5" />
+        </a>
+        <a
+          href="https://t.me/vvbeliaevv"
+          target="_blank"
+          class="btn btn-ghost btn-circle btn-sm"
+          aria-label="Telegram"
+        >
+          <Send class="size-5" />
+        </a>
+        <a
+          href="https://wa.me/79787129833"
+          target="_blank"
+          class="btn btn-ghost btn-circle btn-sm"
+          aria-label="WhatsApp"
+        >
+          <Phone class="size-5" />
         </a>
         <a
           href="https://rxresu.me/kwazzartcreature/plw"

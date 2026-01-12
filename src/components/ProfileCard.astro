@@ -7,15 +7,15 @@ import { Github, FileUser, Mail, Send, Phone } from "@lucide/astro";
   class="min-h-full flex flex-col justify-center max-w-4xl mx-auto lg:py-12 md:py-0"
 >
   <div class="card-terminal p-8 md:p-16 relative overflow-hidden">
-    <div class="flex flex-col gap-8 relative z-10">
+    <div class="flex flex-col gap-4 md:gap-8 relative z-10">
       <div>
         <h1
-          class="text-3xl sm:text-4xl md:text-7xl font-bold mb-4 tracking-tight leading-tight"
+          class="text-3xl sm:text-4xl md:text-7xl font-bold mb-2 md:mb-4 tracking-tight leading-tight"
         >
           Hello! I'm <br />
           <span class="text-primary">Vladimir Beliaev</span>
         </h1>
-        <p class="text-lg md:text-2xl text-base-content/60 mb-8">
+        <p class="text-lg md:text-2xl text-base-content/60 mb-4 md:mb-8">
           full stack engineer
         </p>
       </div>
@@ -24,26 +24,21 @@ import { Github, FileUser, Mail, Send, Phone } from "@lucide/astro";
         class="prose prose-sm md:prose-lg text-base-content/80 leading-relaxed max-w-2xl"
       >
         <p>
-          I'm a web developer with a background in <span
+          I'm a full-stack engineer with a background in <span
             class="text-secondary font-semibold">ML/Data Science</span
-          >. I build data-driven systems and high-quality prototypes. My
-          philosophy is
-          <span class="italic text-primary">ship, ship, ship</span> — delivering value
-          fast without compromising on quality.
+          >. I build data-driven systems and modern web products end-to-end.
+        </p>
+        <p class="hidden md:block">
+          My philosophy is <span class="italic text-primary"
+            >ship, ship, ship</span
+          > — delivering value fast while keeping code quality and architecture under
+          control. I thrive in small teams and early-stage products where I can own
+          the full lifecycle.
         </p>
       </div>
 
-      <div class="flex gap-4 mt-4">
-        <a href="#projects" class="btn btn-primary btn-outline gap-2">
-          view work <span aria-hidden="true">→</span>
-        </a>
-        <a href="#stack" class="btn btn-ghost gap-2">
-          check stack <span aria-hidden="true">↓</span>
-        </a>
-      </div>
-
       <!-- <div
-        class="flex flex-wrap gap-6 mt-2 text-sm md:text-base text-base-content/60"
+        class="flex flex-wrap gap-x-6 gap-y-3 mt-2 text-sm md:text-base text-base-content/60"
       >
         <a
           href="https://t.me/vvbeliaevv"
@@ -63,9 +58,18 @@ import { Github, FileUser, Mail, Send, Phone } from "@lucide/astro";
         </a>
       </div> -->
 
+      <div class="flex gap-4 mt-4">
+        <a href="#projects" class="btn btn-primary btn-outline gap-2">
+          view work <span aria-hidden="true">→</span>
+        </a>
+        <a href="#stack" class="btn btn-ghost gap-2">
+          check stack <span aria-hidden="true">↓</span>
+        </a>
+      </div>
+
       <!-- Socials for mobile -->
       <div
-        class="flex md:hidden gap-3 mt-4 pt-4 border-t border-base-content/10"
+        class="flex md:hidden gap-3 mt-2 pt-4 border-t border-base-content/10"
       >
         <a
           href="https://github.com/paper-light"
@@ -74,6 +78,21 @@ import { Github, FileUser, Mail, Send, Phone } from "@lucide/astro";
           aria-label="GitHub"
         >
           <Github class="size-5" />
+        </a>
+        <a
+          href="https://rxresu.me/kwazzartcreature/plw"
+          target="_blank"
+          class="btn btn-ghost btn-circle btn-sm"
+          aria-label="Resume"
+        >
+          <FileUser class="size-5" />
+        </a>
+        <a
+          href="mailto:vvladimirbeliaev@gmail.com"
+          class="btn btn-ghost btn-circle btn-sm"
+          aria-label="Email"
+        >
+          <Mail class="size-5" />
         </a>
         <a
           href="https://t.me/vvbeliaevv"
@@ -90,21 +109,6 @@ import { Github, FileUser, Mail, Send, Phone } from "@lucide/astro";
           aria-label="WhatsApp"
         >
           <Phone class="size-5" />
-        </a>
-        <a
-          href="https://rxresu.me/kwazzartcreature/plw"
-          target="_blank"
-          class="btn btn-ghost btn-circle btn-sm"
-          aria-label="Resume"
-        >
-          <FileUser class="size-5" />
-        </a>
-        <a
-          href="mailto:vvladimirbeliaev@gmail.com"
-          class="btn btn-ghost btn-circle btn-sm"
-          aria-label="Email"
-        >
-          <Mail class="size-5" />
         </a>
       </div>
     </div>

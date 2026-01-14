@@ -97,7 +97,7 @@
 
     <div class="hidden md:flex md:flex-col gap-4 mt-auto mb-8">
       <a
-        href="https://github.com/paper-light"
+        href="https://github.com/vvbeliaev"
         target="_blank"
         class="btn btn-ghost btn-circle btn-sm md:btn-md"
         aria-label="GitHub"

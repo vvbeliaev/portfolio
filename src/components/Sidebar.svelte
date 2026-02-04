@@ -121,7 +121,7 @@
         <Phone class="size-5 md:size-6" />
       </a>
       <a
-        href="https://rxresu.me/kwazzartcreature/plw"
+        href="https://rxresu.me/vvbeliaev/full-stack"
         target="_blank"
         class="btn btn-ghost btn-circle btn-sm md:btn-md"
         aria-label="LinkedIn"

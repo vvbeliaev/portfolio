@@ -1,6 +1,6 @@
 {
   "basics": {
-    "name": "Vladimir Belyaev",
+    "name": "Vladimir Beliaev",
     "headline": "Full-stack Engineer (Web & AI)",
     "email": "vvladimirbeliaev@gmail.com",
     "phone": "+7 978 712-98-33",
@@ -25,8 +25,8 @@
       }
     ],
     "picture": {
-      "url": "https://storage.rxresu.me/cm6rsmb0x0fim1492o28xsvql/pictures/nf955afg4ukjfi0s3wrzwj03.jpg",
-      "size": 64,
+      "url": "https://rxresu.me/uploads/019bef8d-0eb8-7599-8427-272841ae9312/pictures/1770219124831.webp",
+      "size": 194,
       "aspectRatio": 1,
       "borderRadius": 0,
       "effects": {
@@ -406,7 +406,7 @@
     },
     "typography": {
       "font": {
-        "family": "Open Sans",
+        "family": "JetBrains Mono",
         "subset": "latin",
         "variants": ["regular"],
         "size": 14

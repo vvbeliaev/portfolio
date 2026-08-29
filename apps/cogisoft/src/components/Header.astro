@@ -1,7 +1,7 @@
 ---
 /*
-  Header.astro — minimal HUD strip over the hero: wordmark with the blinking
-  cursor ritual, an anchor to the funnel, and the language switcher.
+  Header.astro — minimal HUD strip over the hero: the bare typographic
+  wordmark, an anchor to the funnel, and the language switcher.
 */
 import { NAV } from "$lib/config";
 import { getLangFromUrl, useTranslations, getAlternatePath, otherLang, localizePath } from "$i18n/utils";
@@ -19,7 +19,7 @@ const navItems = NAV.map((item) => ({
 <header class="absolute inset-x-0 top-0 z-20">
   <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
     <a href={localizePath("/", lang)} class="font-mono text-sm font-semibold tracking-tight">
-      cogisoft<span class="animate-blink text-primary">_</span>
+      cogisoft
     </a>
     <nav class="flex items-center gap-6">
       {

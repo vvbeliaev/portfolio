@@ -32,8 +32,9 @@ Inherited verbatim (do not fork): base palette (`#04050b` background,
 `#0a0c14` card, `#e3e5ee` foreground, `#1a2034` border), the Sora / Hanken
 Grotesk / JetBrains Mono triad, radius `0.5rem`, glow variables
 (`--glow-blur: 24px`, `--glow-spread: -6px`), HUD discipline (mono uppercase
-labels, wide tracking), card panels, the LED indicator and blinking-cursor
-rituals.
+labels, wide tracking), card panels, the LED indicator ritual. The
+blinking-cursor ritual is retired here (2026-08-29): the header wordmark is
+bare typography — `cogisoft`, no cursor, no drawn full-stop.
 
 Changed — the **color grammar is inverted**:
 
@@ -41,8 +42,8 @@ Changed — the **color grammar is inverted**:
   stage labels, the signal field's ticks, the funnel rail's cold end. On the
   personal site blue is the counterpoint; here it is the working color.
 - **Coral-clay `#f08a72` = evidence only.** The CTA, ignited constellation
-  nodes, passed funnel gates, the "You get" (artifact) label, the wordmark
-  cursor. Coral is never ambient — it must always mean "the market said
+  nodes, passed funnel gates, the "You get" (artifact) label. Coral is
+  never ambient — it must always mean "the market said
   yes". The page-wide backdrop deliberately has **no warm core** (unlike
   Atmosphere): warmth exists only where evidence ignites.
 
@@ -150,6 +151,15 @@ The **terminal mark** on display headlines is drawn, not typed: the
 `full-stop` / `full-stop-accent` utilities in `global.css`. Sora's full stop
 is squarish, and at display sizes the coral glyph stopped reading as
 punctuation and no longer matched the white periods in the same headline.
+
+The **site mark / favicon** (2026-08-29) is a solid coral chip: `cs` set in
+JetBrains Mono 800, letters converted to paths, dark letters `#1a0d07` on
+`#f08a72`, radius 14/64. It is one half of a two-brand system — the personal
+site carries the mirror chip, `vb` in steel. The chip is the single allowed
+exception to "coral is never ambient": it lives outside the page surface
+(browser tab, avatars), where it has to win recognition, not obey the page's
+grammar. The header wordmark stays bare typography. The previous favicon (a
+rising polyline) violated §2's "never a line" rule and is gone.
 
 ## 6. Implementation
 

@@ -36,32 +36,16 @@ const navItems = NAV.map((item) => ({
 
 <header class="relative border-b border-border">
   <div class="mx-auto flex max-w-3xl items-center justify-between px-4 py-4">
-    <!-- Brand: full wordmark on ≥sm, the V-constellation site mark on mobile -->
+    <!-- Brand: wordmark (steel "vv") on ≥sm, the vb chip mark on mobile -->
     <a
       href={home}
       class="hidden font-display font-bold tracking-tight sm:block"
       aria-label={name}
     >
-      {SITE.handle}
+      <span class="text-accent">vv</span>beliaev
     </a>
     <a href={home} class="site-mark inline-flex items-center sm:hidden" aria-label={name}>
-      <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
-        <polyline
-          points="8,9 16,24 24,9"
-          fill="none"
-          stroke="#5f95c2"
-          stroke-width="1.6"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          opacity="0.6"
-        />
-        <g fill="#8fb4d8">
-          <circle cx="8" cy="9" r="2" />
-          <circle cx="24" cy="9" r="2" />
-        </g>
-        <circle cx="16" cy="24" r="5.4" fill="#5f95c2" opacity="0.18" />
-        <circle cx="16" cy="24" r="2.4" fill="#e6eefb" />
-      </svg>
+      <img src="/favicon.svg" width="24" height="24" alt="" aria-hidden="true" />
     </a>
 
     <!-- Desktop nav -->
@@ -230,12 +214,13 @@ const navItems = NAV.map((item) => ({
 </header>
 
 <style>
-  /* Mobile brand mark — the V-constellation site mark (favicon). */
-  .site-mark svg {
+  /* Mobile brand mark — the steel vb chip (favicon). */
+  .site-mark img {
+    border-radius: 5px;
     transition: filter 0.25s ease;
   }
-  .site-mark:hover svg,
-  .site-mark:focus-visible svg {
+  .site-mark:hover img,
+  .site-mark:focus-visible img {
     filter: drop-shadow(0 0 6px color-mix(in oklch, var(--accent) 70%, transparent));
   }
 
@@ -341,7 +326,7 @@ const navItems = NAV.map((item) => ({
     .menu-backdrop,
     .menu-panel,
     .menu-bars span,
-    .site-mark svg {
+    .site-mark img {
       transition: none;
     }
   }

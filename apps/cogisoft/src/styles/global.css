@@ -111,20 +111,6 @@
   box-shadow: 0 0 8px currentColor;
 }
 
-@utility animate-blink {
-  animation: blink 1.1s step-end infinite;
-}
-
-@keyframes blink {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-}
-
 /* Luminous accents — glow driven by --glow-blur/--glow-spread */
 @utility glow-primary {
   box-shadow: 0 0 var(--glow-blur, 0px) var(--glow-spread, 0px)

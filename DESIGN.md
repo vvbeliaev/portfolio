@@ -99,6 +99,14 @@ The signature: a soft painterly **skybox** under a crisp **HUD**.
 - **Mono — JetBrains Mono.** Field-log readouts, note numbers, labels, code,
   and the blinking terminal cursor. Often uppercase with wide tracking
   (`0.3em`) for HUD labels.
+- **Wordmark & site mark** (2026-08-29): the header wordmark is `vvbeliaev`
+  in Sora bold with the leading `vv` in steel accent (`#5f95c2`). The site
+  mark / favicon is a solid steel chip — `vb` set in JetBrains Mono 800,
+  letters converted to paths, dark letters `#060f18` on `#5f95c2`, radius
+  14/64. It replaces the earlier V-constellation mark. The chip is one half
+  of a two-brand system: cogisoft carries the mirror chip — `cs` in coral
+  (`#f08a72`). Chips are the only place a brand color is allowed to be a
+  background; on page surfaces the color grammar still applies.
 
 ## 5. Atmosphere (skybox) recipe
 

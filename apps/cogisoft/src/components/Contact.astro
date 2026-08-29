@@ -1,6 +1,24 @@
 ---
+/*
+  Contact.astro — the closing CTA. Key props let the root and the offer pages
+  keep different copy over one structure (the signals page keeps its original
+  "bring me a belief" voice until the offers are revisited).
+*/
 import { CONTACT_HREF } from "$lib/config";
 import { getLangFromUrl, useTranslations } from "$i18n/utils";
+import type { UIKey } from "$i18n/ui";
+
+interface Props {
+  titleKey?: UIKey;
+  subKey?: UIKey;
+  noteKey?: UIKey;
+}
+
+const {
+  titleKey = "contact.title",
+  subKey = "contact.sub",
+  noteKey = "contact.note",
+} = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -11,10 +29,10 @@ const t = useTranslations(lang);
     {t("contact.label")}
   </h2>
   <p class="mt-5 font-display text-4xl font-extrabold tracking-tight text-balance sm:text-5xl">
-    {t("contact.title")}<span class="full-stop" aria-hidden="true" />
+    {t(titleKey)}<span class="full-stop" aria-hidden="true"></span>
   </p>
   <p class="mt-4 text-lg text-muted-foreground">
-    {t("contact.sub")}
+    {t(subKey)}
   </p>
   <a
     href={CONTACT_HREF}
@@ -25,6 +43,6 @@ const t = useTranslations(lang);
     @vvbeliaevv
   </a>
   <p class="mt-6 text-sm text-muted-foreground">
-    {t("contact.note")}
+    {t(noteKey)}
   </p>
 </section>

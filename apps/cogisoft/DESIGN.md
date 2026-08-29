@@ -12,19 +12,34 @@ mode: dark
 
 # Corona Signal
 
-The site for **Cogisoft — project and contract work: build the demand system,
-then run it**. Two page types:
+The site for **Cogisoft — a technical partner for the whole money path: one
+team builds it and runs it**. Two page types:
 
-- **Root** (`/`, `/ru/`) — the hub: RootHero → Phases → Offers → Cases →
-  NotFor → Who → Contact. Its signature is `SolutionLoop`, not SignalField —
-  the two heroes never run the same effect.
+- **Root** (`/`, `/ru/`) — a card for warm leads: RootHero → MoneyPath →
+  BuildRun → Cases → Who → Contact. Its signature is the **path instrument**
+  (2026-08-30, evolved from the 08-29 money rail): a sticky gauge beside the
+  four zones that behaves like the product being sold. Its vertical track
+  fills with steel as the reader scrolls (structure), each node ignites coral
+  once its zone is passed (evidence), and a mono readout names the current
+  zone — "Зона 02 / 04 · Платят" — flipping to "Один договор" when the path
+  completes. On mobile it folds into a thin sticky 4-segment progress strip.
+  Scroll IS the money path; the page answers with numbers about itself. The
+  four zones (How they find you / What they pay for / How it all runs / What
+  the numbers say) follow the hybrid frame: owner-language question → one
+  recognisable situation line → artifact chips → the "We run:" line. The
+  LLM-agents chip is the only coral chip — the spike. The earlier SolutionLoop
+  diagram, the Offers section and NotFor are gone from the root; offers live
+  on their own pages for targeted direct sends.
 - **Offer** (`/offers/<slug>`) — one offer, argued in full. Currently
   `signals` (the original landing, kept as a proto-offer): Hero → Manifesto →
-  Funnel (5 stages) → Contact.
+  Funnel (5 stages) → Contact. Offer pages keep the original first-person
+  voice; the root speaks as a team ("we build, and we run") — an owner
+  decision of 2026-08-29.
 
 `Cases` renders nothing until `CASES` has entries — pages follow cases, never
-the other way round. Original spec (single-page era):
-`docs/superpowers/specs/2026-07-04-cogisoft-landing-design.md`.
+the other way round. Specs: root redesign —
+`docs/superpowers/specs/2026-08-29-cogisoft-money-path-redesign.md`; original
+single-page era — `docs/superpowers/specs/2026-07-04-cogisoft-landing-design.md`.
 
 ## 1. Relation to Corona Bloom
 
@@ -50,7 +65,20 @@ Changed — the **color grammar is inverted**:
 ## 2. Atmosphere: SignalField, not starfield
 
 - `Backdrop.astro` — page-wide fixed layer: cold indigo/steel nebula depth,
-  chthonic floor, vertical polarity, grain. No coral очаг.
+  chthonic floor, vertical polarity, grain. No coral очаг — the cogisoft
+  character is cold, the drama comes from steel. The ambient (2026-08-30,
+  after two rejected passes) is **steel aurora + signal rain**: three blurred
+  curtain-columns of banded indigo light breathing on a ~42s cycle (the
+  market as northern lights made of noise), and a two-depth tick field that
+  FALLS — far layer ~150s per screen, near layer (larger, softly blurred)
+  ~85s, seamless two-copy loops, with two-speed scroll parallax on top.
+  Ticks are dots + short vertical dashes (data points, not stars), never
+  connected — linked density means evidence, the ambient layer is noise.
+  Film dust over the floor; reduced motion stills everything. Rejected on
+  the way: solid-blob aurora (unreadable at blur 70px — the banded curtain
+  at blur 26px reads), a cold horizon glow line, and chart-paper baselines
+  on the floor (owner: straight lines at the bottom felt wrong; the floor
+  is now bare gradient + dust).
 - `SignalField.astro` — the signature of the **offer** hero only (absolute
   within the hero, not fixed): ~170 seeded steel ticks (dots + short vertical
   dashes — data points, not stars), out of which one region turns out to be
@@ -71,46 +99,23 @@ Changed — the **color grammar is inverted**:
   manifesto peeks.
 - `prefers-reduced-motion`: fully static, cluster and halo pre-lit coral.
 
-### SolutionLoop — the root signature
+### Retired root signatures (kept so the dead ends are not re-walked)
 
-`SolutionLoop.astro` states the business in one picture: **what gets built
-varies and it ends; how it is run is always the same and it doesn't.**
+`SolutionLoop.astro` (removed 2026-08-29) stated the business as a diagram:
+four kinds of thing converging through a fan into a junction, and a coral
+ring of verbs turning forever. The owner read the convergence fan as an
+"octopus" — generic and mechanical — and the whole diagram as talking about
+the model instead of the client. Its successors: first the money rail, then
+the path instrument (see the Root description above). Dead ends that stay
+dead regardless of signature:
 
-On the left, four kinds of thing — funnel, app, internal tool, optimisation —
-converge through a fan into a single junction. On the right, one ring turns
-with a pulse that never stops: watch → report → repair. That gap between a
-finite, varied left and an infinite, uniform right IS the offer.
-
-**The split is carried by grammar, not only by shape.** The left half is
-NOUNS — things, and a thing ends. The right half is VERBS in the first person
-— actions, and an action repeats. Keep it that way when editing: an earlier
-pass used "Alive" on the ring, an adjective among nouns, and it read as a
-status light rather than as work being done. The ring's three verbs are the
-same three the hero subtitle uses, word for word, so sentence and picture
-agree.
-
-Each half is tagged with its contract phase and a caption ("built once" /
-"run as long as needed"), which needs no legend and makes the diagram a map
-of the Phases section further down the page.
-
-Grammar: steel is structure — the thing being assembled. The ring is coral
-because it carries the numbers that keep proving the thing works; its stroke
-stays faint (55%) so coral never becomes ambient, and the travelling pulse is
-the bright part.
-
-Two dead ends, kept here so they are not re-walked:
-
-- **A rising polyline.** Read as a stock chart. Same rejection as SignalField:
-  never a trend, never an axis.
-- **A single funnel ring** (Traffic → Page → Lead → Qualification → CRM). Too
-  narrow — the business builds any kind of tech, not one lead funnel — and
-  every node was a Phase-1 artifact, so the diagram promised "build and run"
-  while showing only "build". Worse, it terminated on the client's CRM, i.e.
-  on a handoff, which is precisely the opposite of the thesis.
-
-Geometry note: the ring's labels sit at `r + 30` along their own radius and the
-viewBox runs to 440; at tighter values the lower-left label rendered on top of
-the ring stroke.
+- **A rising polyline.** Reads as a stock chart. Same rejection as
+  SignalField: never a trend, never an axis.
+- **A single funnel ring** (Traffic → Page → Lead → CRM). Too narrow for a
+  business that builds any kind of tech, and it terminated on a handoff —
+  the opposite of the build-and-run thesis.
+- **Convergence diagrams** in general (braces, fans, funnels-into-a-point):
+  after two attempts they keep reading as machinery, not as a promise.
 
 ## 3. Section grammar (root)
 

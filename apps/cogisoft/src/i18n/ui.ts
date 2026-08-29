@@ -3,8 +3,10 @@
 // Stage labels (`STAGE 00 · DISCOVERY`) are a brand ritual and stay English in
 // both locales — they live in $lib/config, not here.
 //
-// Voice: first person singular. There is no team yet, and "we" collapses on the
-// first call. Contractors get named as contractors once they exist.
+// Voice: first person plural — deliberately (owner decision, 2026-08-29). The
+// team framing is honest: an engineering core plus specialist contractors per
+// job, with Vladimir named as the lead in Who. The offer pages keep their
+// original first-person voice until they are revisited.
 
 export const languages = {
   en: "English",
@@ -17,78 +19,118 @@ export const defaultLang: Lang = "en";
 
 export const ui = {
   en: {
-    "nav.phases": "How it works",
-    "nav.offers": "Offers",
+    "nav.path": "The path",
+    "nav.how": "How it works",
     "lang.aria": "Switch language",
 
     // ── Root: the hub ──────────────────────────────────────────────────────
-    "root.hero.eyebrow": "Project & contract work",
-    "root.hero.title": "I build the thing. Then I stay and run it",
-    "root.hero.sub":
-      "A funnel, an app, an internal tool, a process worth optimising — whatever the job needs. Then I run it: I watch it, report the numbers, repair the drift. For as long as it's needed.",
-    "root.hero.cta": "Start a conversation",
+    "root.hero.eyebrow": "Technical partner · project → contract",
+    "root.hero.title": "The whole money path\u00A0— one team",
+    "root.hero.sub.1":
+      "Ads, product, operations, numbers. Not five contractors with you translating between them — ",
+    "root.hero.sub.strong": "one team, one contract, one point of responsibility",
+    "root.hero.sub.2": ". And the code, access and data stay yours. We build, and we run.",
+    "root.hero.cta": "Message on Telegram",
     "root.hero.secondary": "How it works",
+    "path.stop.1": "Found",
+    "path.stop.2": "Paid",
+    "path.stop.3": "Running",
+    "path.stop.4": "Measured",
 
-    "loop.title": "What gets built varies and it ends — a funnel, an app, an internal tool, an optimisation. How it is run is always the same and it does not end: watch, report, repair.",
-    "build.1": "Funnel",
-    "build.2": "App",
-    "build.3": "Internal tool",
-    "build.4": "Optimisation",
-    "run.1": "Watch",
-    "run.2": "Report",
-    "run.3": "Repair",
-    "loop.phase1": "Phase 1",
-    "loop.phase2": "Phase 2",
-    "loop.build.caption": "built once",
-    "loop.run.caption": "run as long as needed",
+    // The money rail: four zones, hybrid frame (question → situation →
+    // artifact chips → the run line).
+    "zone.1.q": "How they find you",
+    "zone.1.situation":
+      "Clients arrive by accident: word of mouth, a lucky post — there is no acquisition system.",
+    "zone.1.a1": "funnels end to end",
+    "zone.1.a2": "paid traffic",
+    "zone.1.a3": "content pipeline",
+    "zone.1.a4": "tracking to the cent",
+    "zone.1.run": "watch the numbers · repair · report",
 
-    "phases.label": "How it works",
-    "phases.title": "Two phases, not one project.",
-    "phases.intro":
-      "A project that ends and drives away is worth little. Anything built starts drifting on day one: integrations break, channels change, formats age, data grows. The value shows up where someone keeps it alive.",
-    "phase1.label": "Phase 1",
-    "phase1.title": "Build",
-    "phase1.body":
-      "Fixed scope, fixed term, fixed price. You end up with a working solution and the documentation to run it.",
-    "phase1.1": "Funnel and acquisition",
-    "phase1.2": "App or service",
-    "phase1.3": "Internal tools and automation",
-    "phase1.4": "Data, integrations, reporting",
-    "phase1.5": "Infrastructure and deploys",
-    "phase2.label": "Phase 2",
-    "phase2.title": "Run",
-    "phase2.body":
-      "Monthly, against an SLA. I answer for it being alive, the numbers being visible, and the drift being repaired.",
-    "phase2.1": "Monitoring and uptime",
-    "phase2.2": "Analytics and a numbers report",
-    "phase2.3": "Drift: fixing what came apart",
-    "phase2.4": "Changes as they're needed",
-    "phase2.5": "A review call every month",
+    "zone.2.q": "What they pay for",
+    "zone.2.situation":
+      "Shipping a product is fast now. Keeping people in it is as hard as ever.",
+    "zone.2.a1": "MVP in weeks",
+    "zone.2.a2": "app",
+    "zone.2.a3": "storefront with payments",
+    "zone.2.a4": "onboarding & retention",
+    "zone.2.run": "releases · support · growth by data",
 
-    "offers.label": "Offers",
-    "offers.title": "A fixed scope against one specific pain.",
-    "offers.intro":
-      "Not a service menu. Each offer names a situation, promises something measurable, and says out loud what it does not include.",
-    "offers.proto": "Prototype",
-    "offers.more": "Read the offer",
+    "zone.3.q": "How it all runs",
+    "zone.3.situation":
+      "Leads in DMs, records in three spreadsheets — and you are the glue.",
+    "zone.3.a1": "internal tools",
+    "zone.3.a2": "automation",
+    "zone.3.a3": "LLM agents inside the system",
+    "zone.3.run": "monitoring · changes · SLA",
+
+    "zone.4.q": "What the numbers say",
+    "zone.4.situation": "Nobody can say exactly what a customer costs.",
+    "zone.4.a1": "dashboards",
+    "zone.4.a2": "unit economics",
+    "zone.4.a3": "weekly digest",
+    "zone.4.run": "metrics stay alive · drift gets caught · decisions follow data",
+
+    "zone.run.prefix": "We run:",
+
+    "panel.title": "The money path",
+    "panel.zone": "Zone",
+    "panel.end": "One contract",
+
+    "onehand.title": "Four zones. One contract",
+    "onehand.body.1":
+      "When one contractor builds the funnel, another buys the traffic and a third keeps the records, the seams between them are your personal risk: “bad landing page” versus “bad traffic”, lost context, weeks of back-and-forth. Here ",
+    "onehand.body.strong": "there is nobody to pass the blame to",
+    "onehand.body.2":
+      " — one team holds the whole path, one person answers for it, and answers with numbers.",
+
+    "model.label": "How it works",
+    "model.title": "Shipping is the middle, not the end",
+    "model.intro":
+      "Nobody knows in advance how long a good product takes — so you never pay for a promise, only for the next week. For the price of one in-house engineer, you get the whole team.",
+
+    "model.audit.tag": "01 · Audit",
+    "model.audit.title": "The entry",
+    "model.audit.body":
+      "One week, fixed price. We look at the whole money path: where it leaks, what to measure, what to build first.",
+    "model.audit.1": "a report with numbers",
+    "model.audit.2": "a plan laid out in sprints",
+    "model.audit.3": "the next move is yours",
+
+    "model.sprint.tag": "02 · Sprints",
+    "model.sprint.title": "A week is the unit of work",
+    "model.sprint.body":
+      "The sprint's outcome is fixed before it starts. It ends with a working increment, a demo and the numbers. You pay by the week — and can stop any week.",
+    "model.sprint.1": "landing page with tracking — one sprint",
+    "model.sprint.2": "lead-intake bot — one sprint",
+    "model.sprint.3": "unit-economics dashboard — one sprint",
+    "model.sprint.4": "an MVP — usually 2–4 sprints",
+    "model.sprint.note":
+      "Funnels are built in sprints but proven by the calendar: marketing runs in monthly experiment cycles.",
+
+    "model.run.tag": "03 · Run",
+    "model.run.title": "We stay and run",
+    "model.run.body":
+      "Monthly, in tiers — you don't have a CTO, on this perimeter we are it. Infrastructure lives in your account under our management.",
+    "model.run.1": "watch — monitoring and alerts",
+    "model.run.2": "report — a weekly numbers digest",
+    "model.run.3": "repair & grow — a bank of hours",
 
     "cases.label": "Cases",
     "cases.title": "What has shipped.",
 
-    "notfor.label": "Not for you if",
-    "notfor.title": "Better said before the call.",
-    "notfor.1":
-      "You need hands for hourly development. I sell a solution and its life afterwards, not hours.",
-    "notfor.2":
-      "You want it built and then we part ways. That's fine, but then I don't answer for where it is in six months — and it's a different conversation about price.",
-    "notfor.3":
-      "You need the result next week. Building takes weeks; the first honest numbers take a few more.",
-    "notfor.4":
-      "Nobody on your side owns their half — decisions, replies, access. I can keep a system alive, but I can't be the one deciding what it should do.",
-
-    "who.label": "Who does this",
+    "who.label": "The team",
+    "who.title": "Who is behind this",
     "who.body":
-      "Vladimir Beliaev. An engineer who builds it and then operates it — product, data, infrastructure. The work I do as a hired specialist lives on vvbeliaev.dev.",
+      "Cogisoft is a compact team: an engineering core plus specialist contractors per job, with no account managers in between. Projects are led by Vladimir Beliaev — a full-stack and AI engineer with a marketing-analytics degree and hands-on media buying. The person you talk to is the person who builds.",
+    "bound.title": "Honest boundaries",
+    "bound.1.strong": "We don't do",
+    "bound.1": "branding or identity as a standalone service",
+    "bound.2.strong": "We don't take",
+    "bound.2": "enterprise integrations or on-site work",
+    "bound.3.strong": "Need a specialist on your team by the hour?",
+    "bound.3": "That's",
 
     // ── Offer: signals (the proto-offer) ───────────────────────────────────
     "hero.eyebrow": "Demand before code",
@@ -154,85 +196,130 @@ export const ui = {
     "contact.sub": "I'll test it against the market and come back with evidence — either way.",
     "contact.note": "One message is enough: what you believe, and where you think the demand is.",
 
-    "footer.tag": "Project & contract work",
+    "contact.root.title": "Tell us what you're building",
+    "contact.root.sub":
+      "Describe the business or the idea in your own words — we'll translate the technical part.",
+    "contact.root.note": "A builder replies, not a manager — usually the same day.",
+
+    "footer.tag": "Technical partner · build → run",
 
     "notfound.title": "Page not found",
     "notfound.body": "This page doesn't exist or has moved.",
     "notfound.back": "Back to the signal",
   },
   ru: {
-    "nav.phases": "Как это устроено",
-    "nav.offers": "Офферы",
+    "nav.path": "Путь",
+    "nav.how": "Как устроено",
     "lang.aria": "Сменить язык",
 
     // ── Корень: хаб ────────────────────────────────────────────────────────
-    "root.hero.eyebrow": "Проектная и подрядная работа",
-    "root.hero.title": "Собираю решение. И остаюсь его вести",
-    "root.hero.sub":
-      "Воронка, приложение, внутренний инструмент, процесс, который стоит оптимизировать, — что нужно, то и собираю. Дальше веду: слежу, что живо, показываю цифры, чиню дрейф. Столько, сколько нужно.",
-    "root.hero.cta": "Написать",
-    "root.hero.secondary": "Как это устроено",
+    "root.hero.eyebrow": "Технический партнёр · проект → контракт",
+    "root.hero.title": "Весь путь денег\u00A0— одна команда",
+    "root.hero.sub.1":
+      "Реклама, продукт, операционка, цифры. Не пять подрядчиков и вы в роли переводчика между ними — ",
+    "root.hero.sub.strong": "одна команда, один договор, одно ответственное лицо",
+    "root.hero.sub.2": ". А код, доступы и данные остаются вашими. Собираем и ведём.",
+    "root.hero.cta": "Написать в Telegram",
+    "root.hero.secondary": "Как устроено",
+    "path.stop.1": "Узнают",
+    "path.stop.2": "Платят",
+    "path.stop.3": "Крутится",
+    "path.stop.4": "Цифры",
 
-    "loop.title": "Собираемое разное и оно кончается — воронка, приложение, внутренний инструмент, оптимизация. Ведомое всегда одинаковое и не кончается: слежу, показываю, чиню.",
-    "build.1": "Воронка",
-    "build.2": "Приложение",
-    "build.3": "Внутренний инструмент",
-    "build.4": "Оптимизация",
-    "run.1": "Слежу",
-    "run.2": "Показываю",
-    "run.3": "Чиню",
-    "loop.phase1": "Фаза 1",
-    "loop.phase2": "Фаза 2",
-    "loop.build.caption": "собираю один раз",
-    "loop.run.caption": "веду, пока нужно",
+    // Рельс пути денег: четыре зоны, гибрид-фрейм (вопрос → ситуация →
+    // чипы-артефакты → строка «ведём»).
+    "zone.1.q": "Как о вас узнают",
+    "zone.1.situation":
+      "Клиенты приходят случайно: сарафан, пара удачных постов — системы привлечения нет.",
+    "zone.1.a1": "воронки под ключ",
+    "zone.1.a2": "закупка трафика",
+    "zone.1.a3": "контент-конвейер",
+    "zone.1.a4": "трекинг до копейки",
+    "zone.1.run": "следим за цифрами · чиним · докладываем",
 
-    "phases.label": "Как это устроено",
-    "phases.title": "Две фазы, а не один проект.",
-    "phases.intro":
-      "Проект, который закончился и уехал, стоит немного. Любое собранное начинает дрейфовать с первого дня: ломаются интеграции, меняются каналы, устаревают форматы, растут данные. Ценность там, где это кто-то держит живым.",
-    "phase1.label": "Фаза 1",
-    "phase1.title": "Собираю",
-    "phase1.body":
-      "Фиксированный объём, срок и цена. На выходе — работающее решение и документация, по которой его можно вести.",
-    "phase1.1": "Воронка и привлечение",
-    "phase1.2": "Приложение или сервис",
-    "phase1.3": "Внутренние тулы и автоматизация",
-    "phase1.4": "Данные, интеграции, отчётность",
-    "phase1.5": "Инфраструктура и выкатка",
-    "phase2.label": "Фаза 2",
-    "phase2.title": "Веду",
-    "phase2.body":
-      "Ежемесячно, под SLA. Отвечаю за то, что решение живо, цифры видны, а дрейф починен.",
-    "phase2.1": "Мониторинг и аптайм",
-    "phase2.2": "Аналитика и отчёт по цифрам",
-    "phase2.3": "Дрейф: чиню то, что разъехалось",
-    "phase2.4": "Доработки по мере надобности",
-    "phase2.5": "Разбор раз в месяц",
+    "zone.2.q": "За что платят",
+    "zone.2.situation":
+      "Собрать продукт сегодня можно быстро. Удержать в нём людей — по-прежнему сложно.",
+    "zone.2.a1": "MVP за недели",
+    "zone.2.a2": "приложение",
+    "zone.2.a3": "витрина с оплатой",
+    "zone.2.a4": "онбординг и удержание",
+    "zone.2.run": "релизы · поддержка · развитие по данным",
 
-    "offers.label": "Офферы",
-    "offers.title": "Зафиксированный объём под конкретную боль.",
-    "offers.intro":
-      "Не меню услуг. Каждый оффер называет ситуацию, обещает измеримое и вслух говорит, что в него не входит.",
-    "offers.proto": "Прототип",
-    "offers.more": "Читать оффер",
+    "zone.3.q": "Как всё крутится",
+    "zone.3.situation":
+      "Заявки в личке, учёт в трёх таблицах, склейщик — вы сами.",
+    "zone.3.a1": "внутренние инструменты",
+    "zone.3.a2": "автоматизация",
+    "zone.3.a3": "LLM-агенты внутри системы",
+    "zone.3.run": "мониторинг · доработки · SLA",
+
+    "zone.4.q": "Что говорят цифры",
+    "zone.4.situation": "Сколько стоит клиент — точно не скажет никто.",
+    "zone.4.a1": "дашборды",
+    "zone.4.a2": "юнит-экономика",
+    "zone.4.a3": "недельный дайджест",
+    "zone.4.run": "метрики живут · дрейф ловится · решения по данным",
+
+    "zone.run.prefix": "Ведём:",
+
+    "panel.title": "Путь денег",
+    "panel.zone": "Зона",
+    "panel.end": "Один договор",
+
+    "onehand.title": "Четыре зоны. Один договор",
+    "onehand.body.1":
+      "Когда воронку делает один подрядчик, трафик — второй, а учёт — третий, стыки между ними — ваш личный риск: «лендинг плохой» против «трафик плохой», потерянный контекст, недели переписок. Здесь ",
+    "onehand.body.strong": "некому переводить стрелки",
+    "onehand.body.2":
+      " — весь путь держит одна команда с одним ответственным, и отвечает за него цифрами.",
+
+    "model.label": "Как устроено",
+    "model.title": "Сдача проекта — середина, а не конец",
+    "model.intro":
+      "Сколько займёт хороший продукт, заранее не знает никто — поэтому вы никогда не платите за обещание, только за следующую неделю. А за цену одного инженера в штате получаете всю команду.",
+
+    "model.audit.tag": "01 · Аудит",
+    "model.audit.title": "Вход",
+    "model.audit.body":
+      "Неделя, фиксированная цена. Смотрим путь денег целиком: где течёт, что мерить, что строить первым.",
+    "model.audit.1": "отчёт с цифрами",
+    "model.audit.2": "план, размеченный по спринтам",
+    "model.audit.3": "дальше решаете вы",
+
+    "model.sprint.tag": "02 · Спринты",
+    "model.sprint.title": "Неделя — единица работы",
+    "model.sprint.body":
+      "Исход спринта фиксируется до старта. В конце — работающий инкремент, демо и цифры. Платите неделями — и можете остановиться в любую.",
+    "model.sprint.1": "лендинг с трекингом — спринт",
+    "model.sprint.2": "бот приёма заявок — спринт",
+    "model.sprint.3": "дашборд юнит-экономики — спринт",
+    "model.sprint.4": "MVP — обычно 2–4 спринта",
+    "model.sprint.note":
+      "Воронки строятся спринтами, а доказываются календарём: маркетинг живёт месячными циклами экспериментов.",
+
+    "model.run.tag": "03 · Ведение",
+    "model.run.title": "Остаёмся и ведём",
+    "model.run.body":
+      "Помесячно, ступенями — у вас нет техдиректора, на этом контуре им становимся мы. Инфраструктура живёт в вашем аккаунте под нашим управлением.",
+    "model.run.1": "следим — мониторинг и алерты",
+    "model.run.2": "показываем — недельный дайджест цифр",
+    "model.run.3": "чиним и развиваем — банк часов",
 
     "cases.label": "Кейсы",
     "cases.title": "Что уже сделано.",
 
-    "notfor.label": "Кому не подходит",
-    "notfor.title": "Лучше сказать до созвона.",
-    "notfor.1":
-      "Нужны руки на почасовую разработку. Я продаю решение и его жизнь дальше, а не часы.",
-    "notfor.2":
-      "Нужно собрать и разойтись. Так можно, но тогда я не отвечаю за то, где это окажется через полгода, — и это другой разговор о цене.",
-    "notfor.3":
-      "Результат нужен на следующей неделе. Сборка — это недели, первые честные цифры — ещё несколько.",
-    "notfor.4":
-      "Внутри некому отвечать за свою половину: решения, ответы, доступы. Держать систему живой я могу, решать за вас, что она должна делать, — нет.",
-
-    "who.label": "Кто это делает",
+    "who.label": "Команда",
+    "who.title": "Кто за этим стоит",
     "who.body":
-      "Владимир Беляев. Инженер, который сам собирает и сам эксплуатирует: продукт, данные, инфраструктура. Работы, которые я делаю как наёмный специалист, — на vvbeliaev.dev.",
+      "Cogisoft — компактная команда: инженерное ядро и профильные подрядчики под задачу, без менеджеров-посредников. Ведёт проекты Владимир Беляев — full-stack и AI-инженер с образованием в маркетинговой аналитике и живым опытом закупки трафика. С вами говорит тот, кто строит.",
+    "bound.title": "Честные границы",
+    "bound.1.strong": "Не делаем",
+    "bound.1": "брендинг и айдентику как отдельную услугу",
+    "bound.2.strong": "Не берёмся",
+    "bound.2": "за enterprise-интеграции и выездные работы",
+    "bound.3.strong": "Нужен специалист в команду по часам?",
+    "bound.3": "Это на",
 
     // ── Оффер: сигналы (прото-оффер) ───────────────────────────────────────
     "hero.eyebrow": "Спрос до кода",
@@ -298,7 +385,12 @@ export const ui = {
     "contact.sub": "Проверю её на рынке и вернусь с доказательствами — в любую сторону.",
     "contact.note": "Одного сообщения достаточно: во что верите и где, по-вашему, спрос.",
 
-    "footer.tag": "Проектная и подрядная работа",
+    "contact.root.title": "Расскажите, что у вас",
+    "contact.root.sub":
+      "Опишите бизнес или идею своими словами — техническую часть переведём мы.",
+    "contact.root.note": "Отвечает не менеджер, а тот, кто строит, — обычно в тот же день.",
+
+    "footer.tag": "Технический партнёр · build → run",
 
     "notfound.title": "Страница не найдена",
     "notfound.body": "Такой страницы нет или она переехала.",

@@ -21,15 +21,15 @@ export const CONTACT_HREF = SITE.telegram;
 // Per-locale site metadata (meta description / Intl locale).
 export const SITE_I18N: Record<Lang, { tagline: string; description: string; locale: string }> = {
   en: {
-    tagline: "build the solution, then run it",
+    tagline: "the whole money path — one team",
     description:
-      "Cogisoft — I build the tech a business needs (funnel, app, internal tool, optimisation) and stay on to run it. Phase 1: build. Phase 2: operate, monthly, against an SLA.",
+      "Cogisoft — a technical partner for the whole money path: acquisition, product, operations, numbers. One team, one contract, one point of responsibility. We build, then stay and run it monthly against an SLA.",
     locale: "en-US",
   },
   ru: {
-    tagline: "собираю решение и веду его",
+    tagline: "весь путь денег — одна команда",
     description:
-      "Cogisoft — собираю тех-решение под задачу бизнеса (воронка, приложение, внутренний инструмент, оптимизация) и остаюсь его вести. Фаза 1 — сборка. Фаза 2 — веду ежемесячно, под SLA.",
+      "Cogisoft — технический партнёр на весь путь денег: привлечение, продукт, операционка, цифры. Одна команда, один договор, одно ответственное лицо. Собираем — и остаёмся вести помесячно, под SLA.",
     locale: "ru-RU",
   },
 };
@@ -37,8 +37,8 @@ export const SITE_I18N: Record<Lang, { tagline: string; description: string; loc
 // Root nav. Anchors only exist on pages that render the matching section, so
 // nav items carry absolute paths and the offer page owns its own anchors.
 export const NAV: ReadonlyArray<{ key: UIKey; href: string }> = [
-  { key: "nav.phases", href: "/#phases" },
-  { key: "nav.offers", href: "/#offers" },
+  { key: "nav.path", href: "/#path" },
+  { key: "nav.how", href: "/#how" },
 ];
 
 /**

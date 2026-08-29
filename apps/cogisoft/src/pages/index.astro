@@ -1,20 +1,18 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import RootHero from "../components/RootHero.astro";
-import Phases from "../components/Phases.astro";
-import Offers from "../components/Offers.astro";
+import MoneyPath from "../components/MoneyPath.astro";
+import BuildRun from "../components/BuildRun.astro";
 import Cases from "../components/Cases.astro";
-import NotFor from "../components/NotFor.astro";
 import Who from "../components/Who.astro";
 import Contact from "../components/Contact.astro";
 ---
 
 <BaseLayout>
   <RootHero />
-  <Phases />
-  <Offers />
+  <MoneyPath />
+  <BuildRun />
   <Cases />
-  <NotFor />
   <Who />
-  <Contact />
+  <Contact titleKey="contact.root.title" subKey="contact.root.sub" noteKey="contact.root.note" />
 </BaseLayout>

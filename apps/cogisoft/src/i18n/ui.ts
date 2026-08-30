@@ -74,9 +74,6 @@ export const ui = {
 
     "zone.run.prefix": "We run:",
 
-    "panel.title": "The money path",
-    "panel.zone": "Zone",
-    "panel.end": "One contract",
 
     "onehand.title": "Four zones. One contract",
     "onehand.body.1":
@@ -263,9 +260,6 @@ export const ui = {
 
     "zone.run.prefix": "Ведём:",
 
-    "panel.title": "Путь денег",
-    "panel.zone": "Зона",
-    "panel.end": "Один договор",
 
     "onehand.title": "Четыре зоны. Один договор",
     "onehand.body.1":

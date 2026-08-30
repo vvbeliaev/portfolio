@@ -16,16 +16,14 @@ The site for **Cogisoft — a technical partner for the whole money path: one
 team builds it and runs it**. Two page types:
 
 - **Root** (`/`, `/ru/`) — a card for warm leads: RootHero → MoneyPath →
-  BuildRun → Cases → Who → Contact. Its signature is the **path instrument**
-  (2026-08-30, evolved from the 08-29 money rail): a sticky gauge beside the
-  four zones that behaves like the product being sold. Its vertical track
-  fills with steel as the reader scrolls (structure), each node ignites coral
-  once its zone is passed (evidence), and a mono readout names the current
-  zone — "Зона 02 / 04 · Платят" — flipping to "Один договор" when the path
-  completes. On mobile it folds into a thin sticky 4-segment progress strip.
-  Scroll IS the money path; the page answers with numbers about itself. The
-  four zones (How they find you / What they pay for / How it all runs / What
-  the numbers say) follow the hybrid frame: owner-language question → one
+  BuildRun → Cases → Who → Contact. Its signature is the **money rail**: one
+  vertical steel line through the four zones, nodes igniting coral on scroll
+  (structure fills, evidence ignites), ending in a solid coral node at "Four
+  zones. One contract". A sticky instrument-panel variant — a gauge with a
+  filling track and a mono readout — was tried on 2026-08-30 and rejected by
+  the owner: the rail stays a quiet line, not a widget. The four zones (How
+  they find you / What they pay for / How it all runs / What the numbers say)
+  follow the hybrid frame: owner-language question → one
   recognisable situation line → artifact chips → the "We run:" line. The
   LLM-agents chip is the only coral chip — the spike. The earlier SolutionLoop
   diagram, the Offers section and NotFor are gone from the root; offers live
@@ -105,8 +103,9 @@ Changed — the **color grammar is inverted**:
 four kinds of thing converging through a fan into a junction, and a coral
 ring of verbs turning forever. The owner read the convergence fan as an
 "octopus" — generic and mechanical — and the whole diagram as talking about
-the model instead of the client. Its successors: first the money rail, then
-the path instrument (see the Root description above). Dead ends that stay
+the model instead of the client. Its successor is the money rail (see the
+Root description above); the sticky path-instrument gauge tried in between
+was also rejected — too much widget for a quiet page. Dead ends that stay
 dead regardless of signature:
 
 - **A rising polyline.** Reads as a stock chart. Same rejection as

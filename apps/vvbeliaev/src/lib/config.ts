@@ -69,14 +69,14 @@ type Channel = {
 
 // FOLLOW — where to consume the content. Secondary to hiring: rendered last.
 export const FOLLOW: ReadonlyArray<Channel> = [
-  { label: "Telegram", handle: "@vvbeliaevv_ch", href: "https://t.me/vvbeliaevv_ch", primary: true },
+  { label: "Telegram", handle: "@vvbeliaev_chan", href: "https://t.me/vvbeliaev_chan", primary: true },
   { label: "YouTube", handle: "@vvbeliaev", href: "https://www.youtube.com/@vvbeliaev" },
 ];
 
 // CONNECT — how to reach out. Telegram DM is the preferred channel and the
 // destination of the hero CTA (and of every "CV on request" link).
 export const CONNECT: ReadonlyArray<Channel> = [
-  { label: "Telegram", handle: "@vvbeliaevv", href: "https://t.me/vvbeliaevv", primary: true },
+  { label: "Telegram", handle: "@vvbeliaev_work", href: "https://t.me/vvbeliaev_work", primary: true },
   { label: "GitHub", handle: "vvbeliaev", href: "https://github.com/vvbeliaev" },
   { label: "Email", handle: "vvbeliaevv@gmail.com", href: "mailto:vvbeliaevv@gmail.com" },
 ];
@@ -90,6 +90,13 @@ export const CONTACT_HREF =
  */
 type Project = {
   name: string;
+  /**
+   * Entry id in the private backbone (`workspace/private/backbone.yaml`), which
+   * is the root source of truth about the work. What is shown here and how it
+   * is phrased is a judgment call, but nothing may be claimed publicly without
+   * an entry behind it — `uv run labs/backbone-check/check.py` enforces that.
+   */
+  backboneId: string;
   kind: "role" | "own";
   tag: Localized;
   description: Localized;
@@ -103,6 +110,7 @@ type Project = {
 export const PROJECTS: ReadonlyArray<Project> = [
   {
     name: "Space N Place",
+    backboneId: "space-n-place",
     kind: "role",
     tag: {
       en: "Data Engineer / Full Stack · Dubai PropTech",
@@ -123,6 +131,7 @@ export const PROJECTS: ReadonlyArray<Project> = [
   },
   {
     name: "Cogisoft",
+    backboneId: "cogito-software",
     kind: "own",
     tag: {
       en: "Project & contract work",
@@ -141,6 +150,7 @@ export const PROJECTS: ReadonlyArray<Project> = [
 export const PARKED_PROJECTS: ReadonlyArray<Project> = [
   {
     name: "TraffHub",
+    backboneId: "traffhub",
     kind: "role",
     tag: {
       en: "Lead Engineer · Media buying",
@@ -166,6 +176,7 @@ export const PARKED_PROJECTS: ReadonlyArray<Project> = [
 export const ARCHIVED_PROJECTS: ReadonlyArray<Project> = [
   {
     name: "LLM-Агент",
+    backboneId: "llmagent",
     kind: "role",
     tag: {
       en: "Lead / Core Developer · 2023–2024",
@@ -179,6 +190,7 @@ export const ARCHIVED_PROJECTS: ReadonlyArray<Project> = [
   },
   {
     name: "Quizbee",
+    backboneId: "quizbee",
     kind: "own",
     tag: { en: "Founder", ru: "Основатель" },
     description: {

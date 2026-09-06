@@ -4,7 +4,7 @@
   keep different copy over one structure (the signals page keeps its original
   "bring me a belief" voice until the offers are revisited).
 */
-import { CONTACT_HREF } from "$lib/config";
+import { CONTACT_HREF, SITE } from "$lib/config";
 import { getLangFromUrl, useTranslations } from "$i18n/utils";
 import type { UIKey } from "$i18n/ui";
 
@@ -40,7 +40,7 @@ const t = useTranslations(lang);
     rel="noopener noreferrer"
     class="glow-primary mt-10 inline-block rounded-lg bg-primary px-8 py-4 font-mono text-sm font-semibold tracking-wide text-primary-foreground transition-[filter] hover:brightness-110"
   >
-    @vvbeliaevv
+    {SITE.telegramHandle}
   </a>
   <p class="mt-6 text-sm text-muted-foreground">
     {t(noteKey)}

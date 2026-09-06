@@ -1,32 +1,34 @@
-# [CLAUDE.md](http://CLAUDE.md)
+# CLAUDE.md
 
 Instructions for agents working in this repository.
 
 ## What this is
 
-A personal-brand monorepo for Vladimir Beliaev (AI Full Stack Engineer · Product
-Lead · Analytics Engineer) — a single source of truth for the site, long-form
-blog posts, and job-search materials. The brand rests not on a logo but on a
-consistent voice and a couple of rituals (numbered "notes", one preview format,
-a "by the numbers" rubric).
+The workshop of Vladimir Beliaev (AI Full Stack Engineer · Product Lead ·
+Analytics Engineer): two sites, the experiments around them, and the non-code
+material they come from. **Own work only.** Client projects get their own
+private repositories; infrastructure lives in `vvbeliaev/infra`. Neither belongs
+here, and neither arrives here "for a moment".
 
-The site is **bilingual — English and Russian.**
+This is also the GitHub profile repository — the root `README.md` renders on the
+profile page. The root is a shopfront: keep stray files out of it.
 
-## Structure
+## Tiers
 
-- `apps/vvbeliaev` — the personal site and blog. Astro + Svelte 5 + shadcn-svelte,
-Tailwind v4, content via Astro Content Collections + MDX, static build (SSG).
-- `workspace` — the "kitchen": everything raw and non-buildable. Astro never
-looks here; nothing ships from here directly. Public part: brand assets.
-**Private part — `workspace/private/`** (gitignored, never in the index): résumés
-(`private/cv/`), raw article drafts (`private/drafts/`), strategy, project notes.
-See `workspace/README.md`.
-- `DESIGN.md` — the site's **design system** (theme "Corona Bloom"). The source
-of truth for colors/tokens, fonts, atmosphere, components, and voice.
-- `docs/design-notes.md` — the design-decision journal: what was tried, the
-forks, and what was rejected.
+| Where | What it holds | Contract |
+| :-- | :-- | :-- |
+| `apps/<name>/` | Things that ship | Dockerfile, a workflow with a `paths:` filter, a Coolify app, a domain. In the pnpm workspace (glob `apps/*`). |
+| `labs/<name>/` | Experiments | A `README.md` with a status. Nothing else is required — no CI, no deploy. |
+| `workspace/` | Non-code | Texts, brand assets, strategy, CV. `assets/` is public, `private/` is never in git. |
+| `docs/` | Specs and the decision journal | — |
 
-pnpm workspace (`apps/*`, `pkgs/*`).
+The line between `labs/` and `workspace/` is **code versus non-code**, not raw
+versus finished. Both are places where work happens; only one is executable.
+
+Promotion `labs/x → apps/x` is a deliberate move (`git mv`, add a Dockerfile,
+copy a workflow, create the Coolify app), and `apps/x → labs/x` is allowed and
+is not a failure. A project can also leave the repository entirely — `git subtree
+split` keeps its history — and its registry row stays behind as `exported → <url>`.
 
 ## Core rule: the repo is public
 
@@ -35,85 +37,110 @@ file, ask: is this ready to be seen by anyone? Contacts, phone numbers, internal
 assessments, raw thoughts, client/employer details beyond the public portfolio,
 tokens and keys — **only** under `workspace/private/` (or in secret managers /
 GitHub secrets for CI). When in doubt, put it in `private/`. Never move a private
-file into a public path "temporarily". CI (`.github/workflows/guard.yml`) fails
-on leaked secrets (gitleaks) and on any tracked path under `workspace/private/`.
+file into a public path "temporarily".
+
+`.github/workflows/guard.yml` fails a push on leaked secrets (gitleaks), on any
+tracked path under `workspace/private/`, on a phone number in a public file, and
+on a lab without a status in its README.
 
 ## Core rule: design & frontend
 
-**For any question or task touching design, the theme, styles, UI, or the site's
-frontend — READ** `[DESIGN.md](./DESIGN.md)` **FIRST.** It is the source of truth for
-all visual decisions: palette, glow, fonts, atmosphere (skybox), components,
-voice, and rituals.
+**For any question or task touching design, the theme, styles, UI, or a site's
+frontend — READ** [`DESIGN.md`](./DESIGN.md) **FIRST.** It is the source of truth
+for palette, glow, fonts, atmosphere, components, voice, and rituals: it holds
+both the values and the grammar that says what they mean. The `:root` block in
+each app's `global.css` is that palette rendered into CSS, not a second opinion —
+if the two disagree, the document wins and the CSS is wrong.
 
-- Don't introduce new colors/fonts/tokens outside `DESIGN.md` — check it first,
-and update the document when needed.
-- The theme is **single and fixed dark** (`<html class="dark">`), with no runtime
-toggle.
-- Tokens live in `:root` in `apps/vvbeliaev/src/styles/global.css`, mapped to Tailwind
-via `@theme inline`. The atmosphere is the `apps/vvbeliaev/src/components/Atmosphere.astro`
-component.
-- On any significant theme change, update `DESIGN.md` in lockstep and record the
-context/rationale in `docs/design-notes.md`.
+- Root `DESIGN.md` is **Corona Bloom**, the parent system;
+  `apps/cogisoft/DESIGN.md` is **Corona Signal**, its agency variant.
+- Don't introduce colors/fonts/tokens outside those documents. Update the
+  document in lockstep with the change, and record the rationale in
+  the journal in `docs/`.
+- Themes are single and fixed dark, with no runtime toggle.
 
-## Articles: the writing pipeline
+Per-app specifics live in each app's own `CLAUDE.md`.
 
-Articles move from a raw "kitchen" (`workspace/`, not built) to the "storefront"
-(`apps/vvbeliaev/src/content/blog`, built and schema-checked). The full convention lives
-in `workspace/README.md` — read it before working on article drafts or publishing.
+## Toolchains
 
-Stages: `private/drafts/ideas.md` (one-line idea) → `private/drafts/<slug>/main.md`
-(loose Russian draft, no schema) → `blog/note-NN-slug/ru.mdx` (RU shaped into the schema, `draft: true`)
-→ `blog/note-NN-slug/en.mdx` (English translation, `translatedFrom: "ru"`) →
-drop `draft: true` to publish.
+- **JS — pnpm.** The workspace glob is `apps/*` only; `labs/` stays out so that
+  an experiment carries its own lockfile and survives being split out. Root
+  scripts: `pnpm dev` (site), `pnpm dev:cogisoft`, and `pnpm build` / `pnpm check`
+  across every app (`-r`), so a forgotten app cannot pass silently.
+- **Python — uv.** A workspace at the repo root (`pyproject.toml`), members
+  `labs/*`, one `uv.lock`. Members share one resolution and one intersected
+  `requires-python`; a lab with conflicting pins or a different Python goes into
+  `exclude` and locks for itself.
+- Node version comes from `.nvmrc`. Fonts are self-hosted via
+  `@fontsource-variable/*`.
+- `pnpm build` in an app directory is the final source of truth for correctness —
+  IDE diagnostics lag.
 
-- **Russian is written first; English is a translation of it.** Mark the EN file
-with `translatedFrom: "ru"`; the UI shows a "Translated from Russian" note.
-- **Folder per article** in the storefront (`note-NN-slug/ru.mdx` + `en.mdx`),
-with the article's cover/assets in the same folder.
-- **RU↔EN are linked by a shared `articleNumber`** — no separate translation key.
-- "Publishing" is a deliberate promotion (draft → collection + schema), not just
-flipping a flag.
+## How knowledge is stored
 
-## Internationalization (i18n)
+Two questions decide where a piece of knowledge belongs: **what kind of
+statement it is**, and **what should trigger it**. Get either wrong and it
+becomes a copy that rots.
 
-- Two locales: **English (default)** and **Russian**.
-- UI strings live in `apps/vvbeliaev/src/i18n/` (one dictionary per locale); use the
-`useTranslations(lang)` / `getLangFromUrl(url)` helpers rather than hardcoding
-copy in components.
-- English is served at the root (`/`, `/blog`); Russian is prefixed (`/ru/`,
-`/ru/blog`).
-- Blog content carries a `lang` field; keep posts paired across locales where it
-makes sense, but a post may exist in only one language.
+**By kind — one statement, one home.** The same claim in two places is not
+redundancy, it is a future contradiction.
 
+| Kind | Example | Home |
+| :-- | :-- | :-- |
+| **Fact** — a value, an inventory | a hex, the lab registry, a version | exactly one file. Every copy that leaves it — another language, another surface, a hand-written list — must be **mechanically checked** against it, or it will diverge. Copies nobody checks are how drift enters |
+| **Norm** — what to do | "Russian is written first", "when in doubt, private" | wherever it loads at the moment of the action — see the triggers below |
+| **Rationale** — why this, what was rejected | "the gauge was tried on 2026-08-30 and rejected" | the journal in [`docs/`](./docs/) — one dated, append-only file per decision |
+| **Intent** — what we are about to do | a spec, before it is built | a temporary document. Once built it collapses into a journal entry and is deleted |
 
+A document earns its place only if it answers something you cannot get by
+reading the code. Otherwise it is a copy with a shelf life.
 
-## Build / verification
+**By trigger — a norm that arrives at the wrong moment is not a norm.**
 
-- From `apps/vvbeliaev`: `pnpm build` — the static build (and the final source of truth
-for correctness; IDE diagnostics may lag).
-- Fonts are self-hosted via `@fontsource-variable/*`.
+| Should apply | Put it in |
+| :-- | :-- |
+| always, everywhere | this file |
+| always, when certain files are touched | `.claude/rules/*.md` with `paths:` — fires on the path, cannot misfire |
+| when someone decides to do a certain task | a skill — fires on the model matching its description, or on `/name`, and can miss |
+| every time, with no judgment allowed | a hook |
+
+`README.md` is none of the above: it is for a person browsing the repository on
+GitHub. Description and inventory there; rules and procedures in the files above.
+
+What loads by itself: this file at launch, the nested `CLAUDE.md` files when a
+file in their directory is read (`apps/vvbeliaev/`, `apps/cogisoft/`, `labs/`,
+`workspace/`), and `.claude/rules/blog.md` whenever an article or a draft is
+touched. Only this root file is re-injected after a compaction; the nested ones
+return when their directory is read again.
+
+Read on purpose:
+
+| Document | Covers |
+| :-- | :-- |
+| [DESIGN.md](./DESIGN.md) | The design system — before anything visual |
+| [docs/](./docs/) | The decision journal — one dated, append-only file per decision |
+| `.claude/skills/vvbeliaev-ops/SKILL.md` | The deploy runbook |
 
 ## Deploy & ops
 
-Production is **https://vvbeliaev.dev**. Full runbook — the `vvbeliaev-ops` skill
-(`.claude/skills/vvbeliaev-ops/SKILL.md`); read it before touching CI, Coolify,
-Cloudflare, or the server. Design rationale — `docs/superpowers/specs/2026-08-15-vvbeliaev-deploy-design.md`.
+Production: **https://vvbeliaev.dev** and **https://cogisoft.dev**. Read the
+`vvbeliaev-ops` skill before touching CI, Coolify, Cloudflare, or the server.
+Why the pipeline looks like this: `docs/2026-08-15-deploy-pipeline.md`.
 
-- **Pipeline:** push to `main` → GitHub Actions (`.github/workflows/vvbeliaev.yml`)
-runs `check` → builds the image → pushes to GHCR (`ghcr.io/vvbeliaev/vvbeliaev`) →
-triggers Coolify, which pulls the image. **Nothing is ever built on the server.**
-Each app has its own `apps/<app>/Dockerfile`; the build context is the monorepo root.
-- **Hosting:** Coolify (`https://coolify.vvbeliaev.dev`, MCP server **`coolify`** — no
-suffix; `coolify-th` / `coolify-gleb` are other teams, don't touch them), project
-`portfolio`, server `small-ubuntu-4gb-fsn1-2`. Public traffic comes only through a
-Cloudflare Tunnel (`vvbeliaev-01`, cloudflared runs as a Coolify service); the server
-exposes no ports for the site.
-- **Discipline:** after every push, `gh run watch --exit-status` until green; a red
-`check` means no image and no deploy. Reading prod (logs, status, deployments) is
-free; **any mutation** (deploy/restart/env/tunnel/DNS/re-run of a deploy workflow)
-only on an explicit request from the owner, naming the exact resource. Rollback is a
-mutation too.
-- Adding another app of the monorepo to deploy: follow the checklist at the end of
-the ops skill (Dockerfile → workflow copy → Coolify Docker Image app → tunnel
-hostname + CNAME).
-
+- **Pipeline:** push to `main` → GitHub Actions (`.github/workflows/<app>.yml`)
+  runs `check` → builds the image → pushes to GHCR → triggers Coolify, which
+  pulls it. **Nothing is ever built on the server.** Each app has its own
+  `apps/<app>/Dockerfile`; the build context is the monorepo root, with
+  `workspace/`, `labs/` and `docs/` excluded via `.dockerignore`.
+- **Hosting:** Coolify (`https://coolify.vvbeliaev.dev`, MCP server **`coolify`** —
+  no suffix; `coolify-th` / `coolify-gleb` are other teams, don't touch them),
+  project `portfolio`, server `small-ubuntu-4gb-fsn1-2`. Public traffic arrives
+  only through the Cloudflare Tunnel `vvbeliaev-01`; the server exposes no ports.
+- **Discipline:** after every push, `gh run watch --exit-status` until green; a
+  red `check` means no image and no deploy. Reading prod (logs, status,
+  deployments) is free; **any mutation** (deploy/restart/env/tunnel/DNS/re-run of
+  a deploy workflow) only on an explicit request from the owner, naming the exact
+  resource. Rollback is a mutation too.
+- Adding another app to the deploy: the checklist at the end of the ops skill
+  (Dockerfile → workflow copy → Coolify Docker Image app → tunnel hostname +
+  CNAME).

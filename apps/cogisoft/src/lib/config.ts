@@ -9,7 +9,8 @@ export const SITE = {
   // TODO: hello@cogisoft.dev is unverified — the primary CTA points at Telegram
   // (known-working) until the mailbox is confirmed. Swap CONTACT_HREF back then.
   email: "hello@cogisoft.dev",
-  telegram: "https://t.me/vvbeliaevv",
+  telegram: "https://t.me/vvbeliaev_work",
+  telegramHandle: "@vvbeliaev_work",
   // The person behind it. The link is deliberate: the two brands are connected
   // openly, never firewalled — a hidden link reads worse than a stated one.
   founder: "Vladimir Beliaev",

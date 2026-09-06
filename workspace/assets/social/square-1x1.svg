@@ -155,6 +155,6 @@
     <circle cx="540.0" cy="437.5" r="17.2" fill="#e6eefb" filter="url(#glow)"/>
   </g>
   <text x="540.0" y="700" text-anchor="middle" font-family="'Sora','Segoe UI Variable','Segoe UI',system-ui,-apple-system,sans-serif" font-size="74" font-weight="800" letter-spacing="-1.63" fill="#e3e5ee">Vladimir Beliaev<tspan dx="3.0" fill="#f08a72">▎<animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1.1s" repeatCount="indefinite"/></tspan></text>
-  <text x="540.0" y="752" text-anchor="middle" font-family="'JetBrains Mono','SF Mono',ui-monospace,monospace" font-size="22" letter-spacing="7.9" fill="#8b90a4">AI&#160;FULL&#160;STACK&#160;&#183;&#160;PRODUCT&#160;&#183;&#160;ANALYTICS</text>
+  <text x="540.0" y="752" text-anchor="middle" font-family="'JetBrains Mono','SF Mono',ui-monospace,monospace" font-size="22" letter-spacing="7.9" fill="#7d8294">AI&#160;FULL&#160;STACK&#160;&#183;&#160;PRODUCT&#160;&#183;&#160;ANALYTICS</text>
   <text x="540.0" y="980" text-anchor="middle" font-family="'JetBrains Mono','SF Mono',ui-monospace,monospace" font-size="24" letter-spacing="2.4" fill="#5f95c2">@vvbeliaev</text>
 </svg>

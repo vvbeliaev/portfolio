@@ -3,7 +3,9 @@ name: guard
 # Репозиторий публичный. Этот workflow — страховка от утечек:
 #   1. gitleaks — секреты (токены, ключи) в диффе пуша / PR;
 #   2. path guard — ничего под workspace/private/ не должно быть в индексе,
-#      и в публичных файлах не должно быть телефонов.
+#      и в публичных файлах не должно быть телефонов;
+#   3. labs guard — у каждого эксперимента есть README со статусом, а общий
+#      uv.lock не разъехался с pyproject-ами.
 # Не подменяет голову: правило «сомневаешься — в private/» в CLAUDE.md.
 
 on:
@@ -47,3 +49,46 @@ jobs:
             echo "::error::phone number found in a public file — move it to workspace/private/"
             exit 1
           fi
+
+  labs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      # Контракт яруса (labs/CLAUDE.md): у лаба есть README, а его статус —
+      # ровно одной строкой в реестре labs/README.md. Статус в двух местах
+      # рано или поздно разойдётся сам с собой, поэтому дом у него один.
+      - name: Every lab has a README and a row in the registry
+        run: |
+          set -euo pipefail
+          fail=0
+          for dir in labs/*/; do
+            [ -d "$dir" ] || continue
+            name=$(basename "$dir")
+            if [ ! -f "${dir}README.md" ]; then
+              echo "::error::$dir has no README.md — see labs/CLAUDE.md for the contract"
+              fail=1
+            fi
+            if ! grep -qE "^\| \[$name\]\(\./$name\).*\`(alive|parked|graduated → apps/[a-z0-9._-]+|exported → [^\`]+)\`" labs/README.md; then
+              echo "::error::labs/README.md has no registry row with a status for '$name'"
+              echo "::error::expected: | [$name](./$name) | what it is | \`alive\` |"
+              fail=1
+            fi
+          done
+          exit "$fail"
+
+      # Мажорные теги setup-uv не публикуются с v8 — пин точной версии обязателен.
+      - uses: astral-sh/setup-uv@v10.0.1
+
+      - name: uv.lock is in sync with the workspace
+        run: uv lock --check
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: .nvmrc
+
+      # Профильный README — самая видимая страница аккаунта, и её факты
+      # обязаны совпадать с конфигом сайта. Обе стороны публичные, поэтому
+      # сверка возможна прямо здесь, без workspace/private.
+      - name: Profile README facts match the site config
+        run: node labs/profile-readme/generate.mjs --check

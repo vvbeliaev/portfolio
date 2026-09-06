@@ -36,8 +36,8 @@ team builds it and runs it**. Two page types:
 
 `Cases` renders nothing until `CASES` has entries — pages follow cases, never
 the other way round. Specs: root redesign —
-`docs/superpowers/specs/2026-08-29-cogisoft-money-path-redesign.md`; original
-single-page era — `docs/superpowers/specs/2026-07-04-cogisoft-landing-design.md`.
+`docs/2026-08-29-money-path-rail.md`; original single-page era —
+`docs/2026-07-04-corona-signal-fork.md`.
 
 ## 1. Relation to Corona Bloom
 

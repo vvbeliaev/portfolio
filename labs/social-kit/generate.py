@@ -9,13 +9,15 @@ cosmos->chthonic gradient, coral ember, cold nebula, seeded twinkling star field
 import random
 from pathlib import Path
 
-OUT = Path(__file__).resolve().parent
+# Masters land in the brand-asset shelf, not next to the generator:
+# labs/ holds the code, workspace/assets/ holds what ships to the channels.
+OUT = Path(__file__).resolve().parents[2] / "workspace" / "assets" / "social"
 OUT.mkdir(parents=True, exist_ok=True)
 
 FG = "#e3e5ee"
 EMBER = "#f08a72"
 STEEL = "#5f95c2"
-MUTED = "#8b90a4"
+MUTED = "#7d8294"   # = --muted-foreground сайта; было #8b90a4 — копия старой палитры с опечаткой
 SANS = "'Sora','Segoe UI Variable','Segoe UI',system-ui,-apple-system,sans-serif"
 MONO = "'JetBrains Mono','SF Mono',ui-monospace,monospace"
 

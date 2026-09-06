@@ -23,11 +23,11 @@
 
 ## Перегенерация
 
-`generate.py` — единый источник правды (палитра, раскладки, seeded-звёзды).
-Меняешь параметры там → пересобираешь SVG:
+Генератор живёт в `labs/social-kit/` — единый источник правды (палитра,
+раскладки, seeded-звёзды). Меняешь параметры там → пересобираешь SVG сюда:
 
 ```bash
-python3 workspace/assets/social/generate.py
+uv run labs/social-kit/generate.py
 ```
 
 Затем экспорт SVG→PNG в точный размер (headless Chrome; `$W`/`$H` = размеры файла):

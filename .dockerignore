@@ -16,8 +16,9 @@ node_modules
 *.pem
 *.key.json
 
-# кухня и документация: Astro на них не смотрит
+# кухня, эксперименты и документация: Astro на них не смотрит
 workspace/
+labs/
 docs/
 *.md
 

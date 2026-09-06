@@ -30,7 +30,8 @@ service-account*.json
 npm-debug.log*
 pnpm-debug.log*
 
-# python tooling (social-kit generator)
+# python: uv workspace at the repo root (labs/*), see pyproject.toml
+.venv/
 .ruff_cache/
 __pycache__/
 

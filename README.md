@@ -1,6 +1,11 @@
 <!--
   Profile README for github.com/vvbeliaev — rendered on the profile landing page.
   Theme: "Corona Bloom" (see DESIGN.md) — deep cosmos, a luminous coral ember.
+
+  Blocks between <!- - facts:… - -> markers are GENERATED from the site's own
+  config (apps/vvbeliaev/src/lib/config.ts) and the theme tokens. Edit those
+  sources, then run: node labs/profile-readme/generate.mjs
+  CI fails if they drift apart.
   Banner: workspace/assets/corona-bloom-banner.svg (animated SVG, plays via <img>).
 -->
 
@@ -12,10 +17,12 @@
 
 <br />
 
-<a href="https://vvbeliaev.dev"><img src="https://img.shields.io/badge/vvbeliaev.dev-04050B?style=flat&logo=astro&logoColor=F08A72" alt="Website" /></a>
-<a href="https://t.me/vvbeliaevv_ch"><img src="https://img.shields.io/badge/Telegram_·_channel-04050B?style=flat&logo=telegram&logoColor=5F95C2" alt="Telegram channel" /></a>
+<!-- facts:channels -->
+<a href="https://vvbeliaev.dev"><img src="https://img.shields.io/badge/vvbeliaev.dev-04050B?style=flat&logo=astro&logoColor=F08A72" alt="vvbeliaev.dev" /></a>
+<a href="https://t.me/vvbeliaev_chan"><img src="https://img.shields.io/badge/Telegram_·_channel-04050B?style=flat&logo=telegram&logoColor=5F95C2" alt="Telegram · channel" /></a>
 <a href="https://www.youtube.com/@vvbeliaev"><img src="https://img.shields.io/badge/YouTube-04050B?style=flat&logo=youtube&logoColor=F08A72" alt="YouTube" /></a>
 <a href="mailto:vvbeliaevv@gmail.com"><img src="https://img.shields.io/badge/Email-04050B?style=flat&logo=gmail&logoColor=F08A72" alt="Email" /></a>
+<!-- /facts:channels -->
 
 <br /><br />
 
@@ -29,12 +36,14 @@
 
 ### `> building now`
 
-| Project                                                                | What it is                                                                                                                                                 |
-| :--------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **[Space N Place](https://spacenplace.ai)** · _Lead Engineer_          | AI real-estate discovery & market intelligence for Dubai — live market snapshot, ML liquidity scoring, multimodal vector search, floor-plan understanding. |
-| **[LLM-Агент](https://llmagent.ru)** · _AI agents for business_        | Turns company knowledge into 24/7 RAG assistants across web, Telegram & Bitrix24.                                                                          |
+<!-- facts:work -->
+| Project | What it is |
+| :-- | :-- |
+| **[Space N Place](https://spacenplace.ai)** · _Data Engineer / Full Stack · Dubai PropTech_ | AI real-estate discovery & market intelligence for Dubai. |
+| **[Cogisoft](https://cogisoft.dev)** · _Project & contract work_ | Where my project and contract work lives — offers, cases, write-ups. |
 
-<sub>Parked micro-SaaS: Quizbee.</sub>
+<sub>Parked: TraffHub. Archived: LLM-Агент, Quizbee.</sub>
+<!-- /facts:work -->
 
 ### `> stack`
 
@@ -61,5 +70,7 @@
 
 ### `> reach out`
 
-**Read the work** → [Telegram channel](https://t.me/vvbeliaevv_ch) · [YouTube](https://www.youtube.com/@vvbeliaev) · [vvbeliaev.dev](https://vvbeliaev.dev)
-**Reach me** → [Telegram DM](https://t.me/vvbeliaevv) · [Email](mailto:vvbeliaevv@gmail.com)
+<!-- facts:reach -->
+**Read the work** → [Telegram channel](https://t.me/vvbeliaev_chan) · [YouTube](https://www.youtube.com/@vvbeliaev) · [vvbeliaev.dev](https://vvbeliaev.dev)
+**Reach me** → [Telegram DM](https://t.me/vvbeliaev_work) · [Email](mailto:vvbeliaevv@gmail.com)
+<!-- /facts:reach -->

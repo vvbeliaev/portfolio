@@ -100,4 +100,4 @@ Coolify содержат uuid приложения.
    FQDN) в проекте `portfolio` через MCP `application create_dockerimage`.
 4. Cloudflare: hostname в ingress туннеля `vvbeliaev-01` + proxied CNAME на
    `<tunnel>.cfargotunnel.com` (тот же cloudflared обслуживает все хосты).
-5. Спека-первоисточник: `docs/superpowers/specs/2026-08-15-vvbeliaev-deploy-design.md`.
+5. Развилки, задавшие схему: `docs/2026-08-15-deploy-pipeline.md`.
